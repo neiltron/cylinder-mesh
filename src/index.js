@@ -47,7 +47,6 @@ export default (radius = 1, height = 1, sides = 5) => {
 
   return {
     positions,
-    cells,
-    count: points
+    cells
   };
 };
