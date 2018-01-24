@@ -14,7 +14,7 @@
     "test": "mocha --compilers js:babel-core/register ./src/**/*.test.js",
     "test:single": "mocha --compilers js:babel-core/register"
   },
-  "author": "Neil Pullman",
+  "author": "Your Name <neil@descend.org> (http://descend.org)",
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
