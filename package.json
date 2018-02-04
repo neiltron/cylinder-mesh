@@ -1,6 +1,6 @@
 {
   "name": "cylinder-mesh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate a basic cylinder mesh",
   "main": "./dist/index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "test": "mocha --compilers js:babel-core/register ./src/**/*.test.js",
     "test:single": "mocha --compilers js:babel-core/register"
   },
-  "author": "Your Name <neil@descend.org> (http://descend.org)",
+  "author": "Neil Pullman <neil@descend.org> (http://descend.org)",
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
