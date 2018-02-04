@@ -19,15 +19,14 @@ export default (radius = 1, height = 1, sides = 5) => {
     }
 
     const vector = [
-      Math.sin(angle) * radius - (radius / 2),
-      Math.floor(_index),
-      Math.cos(angle) * radius - (radius / 2)
+      Math.sin(angle) * (radius / 2.0),
+      _index,
+      Math.cos(angle) * (radius / 2.0)
     ];
 
     angle += step;
 
     return vector;
-
   });
 
   // connect lines with cells
@@ -35,12 +34,15 @@ export default (radius = 1, height = 1, sides = 5) => {
 
   for (let i = 0; i < points / 2; i += sides) {
     for (let j = 0; j < sides; j++) {
-      if (j === sides - 1) {
-        cells.push(0 + j + i, sides * i, sides + j + i);
-        cells.push(sides * i, sides + j + i, 1 + j + i);
+
+      // if last cell in row, connect back to
+      // first side to complete tunnel.
+      if (j === sides) {
+        cells.push([j + i, sides * i, sides + j + i]);
+        cells.push([sides * i, sides + j + i, 1 + j + i]);
       } else {
-        cells.push(0 + j + i, 1 + j + i, sides + j + i);
-        cells.push(1 + j + i, sides + j + i, (sides + 1) + j + i);
+        cells.push([j + i, j + i + 1, sides + j + i]);
+        cells.push([j + i + 1, sides + j + i, (sides + 1) + j + i]);
       }
     }
   }
